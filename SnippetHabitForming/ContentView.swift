@@ -1,21 +1,32 @@
-//
-//  ContentView.swift
-//  SnippetHabitForming
-//
-//  Created by Mónica Barrera on 20/4/2026.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var route: AppRoute = .home
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            switch route {
+            case .home:
+                HomeScreen(route: $route)
+            case .reminderPreferences:
+                ReminderPreferencesScreen(route: $route)
+            case .routineBuilder:
+                RoutineBuilderScreen(route: $route)
+            case .quickJournalEntry:
+                QuickJournalEntryScreen(route: $route)
+            case .streakPopup:
+                StreakPopupScreen(route: $route)
+            case .weeklyRecapOverview:
+                WeeklyRecapOverviewScreen(route: $route)
+            case .weeklyHabitTracker:
+                WeeklyHabitTrackerScreen(route: $route)
+            case .dailyCheckIn:
+                DailyCheckInScreen(route: $route)
+            case .challengeSelection:
+                ChallengeSelectionScreen(route: $route)
+            }
         }
-        .padding()
+        .preferredColorScheme(.light)
     }
 }
 
