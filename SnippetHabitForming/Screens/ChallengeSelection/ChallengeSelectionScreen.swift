@@ -5,7 +5,7 @@ struct ChallengeSelectionScreen: View {
 
     var body: some View {
         FigmaScaledCanvas(background: .soft) {
-            IconButton(systemName: "arrow.left", action: { route = .dailyCheckIn })
+            IconButton(systemName: "arrow.left", action: { route = .back })
                 .position(x: 61, y: 48)
             IconButton(systemName: "house", action: { route = .home })
                 .position(x: 819, y: 49)
@@ -21,7 +21,7 @@ struct ChallengeSelectionScreen: View {
                     Spacer()
 
                     Button {
-                        route = .quickJournalEntry
+                        route = .quickJournalEntry(.challengeEveryday)
                     } label: {
                         Text("Tap to start")
                             .figmaText(11, weight: .bold)

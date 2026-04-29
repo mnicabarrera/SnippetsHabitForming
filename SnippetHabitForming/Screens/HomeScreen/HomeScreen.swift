@@ -7,7 +7,7 @@ struct HomeScreen: View {
         FigmaScaledCanvas(background: .blue) {
             IconButton(systemName: "gearshape", action: { route = .reminderPreferences })
                 .position(x: 42, y: 44)
-            IconButton(systemName: "plus.circle", action: { route = .quickJournalEntry })
+            IconButton(systemName: "plus.circle", action: { route = .quickJournalEntry() })
                 .position(x: 832, y: 46)
 
             Text("Snippets")
@@ -20,15 +20,20 @@ struct HomeScreen: View {
             IconButton(systemName: "chevron.right", action: { route = .routineBuilder })
                 .position(x: 805, y: 202)
 
-            NotebookView(
-                title: "Vacation\nJournal",
-                location: "Bogota, Colombia",
-                date: "Jan, 2026",
-                grid: "A4/GRID",
-                color: HabitDesign.mintBook,
-                width: 160,
-                height: 228
-            )
+            Button {
+                route = .quickJournalEntry()
+            } label: {
+                NotebookView(
+                    title: "Vacation\nJournal",
+                    location: "Bogota, Colombia",
+                    date: "Jan, 2026",
+                    grid: "A4/GRID",
+                    color: HabitDesign.mintBook,
+                    width: 160,
+                    height: 228
+                )
+            }
+            .buttonStyle(.plain)
             .position(x: 213, y: 217)
 
             Button {
@@ -47,15 +52,20 @@ struct HomeScreen: View {
             .buttonStyle(.plain)
             .position(x: 435, y: 217)
 
-            NotebookView(
-                title: "Diary &\nSketches",
-                location: "Sydney, Australia",
-                date: "March, 2026",
-                grid: "A4/DOTS",
-                color: HabitDesign.pinkBook,
-                width: 160,
-                height: 228
-            )
+            Button {
+                route = .quickJournalEntry()
+            } label: {
+                NotebookView(
+                    title: "Diary &\nSketches",
+                    location: "Sydney, Australia",
+                    date: "March, 2026",
+                    grid: "A4/DOTS",
+                    color: HabitDesign.pinkBook,
+                    width: 160,
+                    height: 228
+                )
+            }
+            .buttonStyle(.plain)
             .position(x: 657, y: 217)
         }
     }

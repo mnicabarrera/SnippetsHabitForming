@@ -5,7 +5,7 @@ struct WeeklyRecapOverviewScreen: View {
 
     var body: some View {
         FigmaScaledCanvas(background: .soft) {
-            IconButton(systemName: "arrow.left", action: { route = .quickJournalEntry })
+            IconButton(systemName: "arrow.left", action: { route = .back })
                 .position(x: 44, y: 36)
             IconButton(systemName: "house", action: { route = .home })
                 .position(x: 830, y: 36)
