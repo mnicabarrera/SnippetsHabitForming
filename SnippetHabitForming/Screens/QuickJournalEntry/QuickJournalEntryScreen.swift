@@ -8,7 +8,7 @@ struct QuickJournalEntryScreen: View {
     @State private var showsChallengePhotos = false
 
     var body: some View {
-        FigmaScaledCanvas(background: .blue) {
+        FigmaScaledCanvas(background: .blue, backgroundImageName: "Background 3", backgroundIgnoresSafeArea: true) {
             IconButton(systemName: "house", action: { route = .home })
                 .position(x: 50, y: 27)
 
@@ -31,6 +31,8 @@ struct QuickJournalEntryScreen: View {
             }
             .position(x: 816, y: 118)
 
+        }
+        .overlay {
             if showsStreakPopup {
                 StreakCelebrationOverlay(route: $route)
             }
@@ -49,41 +51,29 @@ private struct StreakCelebrationOverlay: View {
     @Binding var route: AppRoute
 
     var body: some View {
-        ZStack {
-            Rectangle()
+        GeometryReader { proxy in
+            let scale = min(proxy.size.width / HabitDesign.canvasSize.width, proxy.size.height / HabitDesign.canvasSize.height)
+            let popupX = proxy.size.width / 2 + (437 - HabitDesign.canvasSize.width / 2) * scale
+            let popupY = proxy.size.height / 2 + (207 - HabitDesign.canvasSize.height / 2) * scale
+
+            ZStack {
+                Rectangle()
                 .fill(.black.opacity(0.55))
-                .frame(width: HabitDesign.canvasSize.width, height: HabitDesign.canvasSize.height)
-                .position(x: HabitDesign.canvasSize.width / 2, y: HabitDesign.canvasSize.height / 2)
+                    .ignoresSafeArea()
 
-            PaperCard(width: 226, height: 234, radius: 30) {
-                VStack(spacing: 0) {
-                    Image(systemName: "star")
-                        .font(.system(size: 86, weight: .black))
-                        .foregroundStyle(.black.opacity(0.82))
-                        .shadow(color: .white.opacity(0.95), radius: 1, x: -2, y: -2)
-                        .padding(.top, 24)
-
-                    Text("3 Days!")
-                        .figmaText(31, weight: .bold)
-                        .padding(.top, 8)
-
-                    Text("Consistency Queen")
-                        .figmaText(13)
-                        .padding(.top, 3)
-
-                    Button {
-                        route = .weeklyRecapOverview
-                    } label: {
-                        Text("Overview")
-                            .figmaText(8, weight: .bold)
-                            .underline()
-                            .padding(.top, 27)
-                    }
-                    .buttonStyle(.plain)
+                Button {
+                    route = .weeklyRecapOverview
+                } label: {
+                    Image("PopUp Streak")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 226 * scale, height: 244 * scale)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .position(x: popupX, y: popupY)
+                .accessibilityLabel("Overview")
             }
-            .position(x: 437, y: 220)
         }
     }
 }

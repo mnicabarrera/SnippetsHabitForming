@@ -20,22 +20,44 @@ extension View {
 
 struct FigmaScaledCanvas<Content: View>: View {
     var background: FabricBackground.Kind = .soft
+    var backgroundImageName: String?
+    var backgroundIgnoresSafeArea = false
     @ViewBuilder var content: () -> Content
 
     var body: some View {
-        GeometryReader { proxy in
-            let scale = min(proxy.size.width / HabitDesign.canvasSize.width, proxy.size.height / HabitDesign.canvasSize.height)
-
-            ZStack {
-                FabricBackground(kind: background)
-                ZStack {
-                    content()
-                }
-                .frame(width: HabitDesign.canvasSize.width, height: HabitDesign.canvasSize.height)
-                .scaleEffect(scale)
+        ZStack {
+            if backgroundIgnoresSafeArea {
+                backgroundView
+                    .ignoresSafeArea()
             }
-            .frame(width: proxy.size.width, height: proxy.size.height)
-            .clipped()
+
+            GeometryReader { proxy in
+                let scale = min(proxy.size.width / HabitDesign.canvasSize.width, proxy.size.height / HabitDesign.canvasSize.height)
+
+                ZStack {
+                    if !backgroundIgnoresSafeArea {
+                        backgroundView
+                    }
+                    ZStack {
+                        content()
+                    }
+                    .frame(width: HabitDesign.canvasSize.width, height: HabitDesign.canvasSize.height)
+                    .scaleEffect(scale)
+                }
+                .frame(width: proxy.size.width, height: proxy.size.height)
+                .clipped()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var backgroundView: some View {
+        if let backgroundImageName {
+            Image(backgroundImageName)
+                .resizable()
+                .scaledToFill()
+        } else {
+            FabricBackground(kind: background)
         }
     }
 }
@@ -51,11 +73,12 @@ struct FabricBackground: View {
 
     var body: some View {
         Canvas { context, size in
-            let base: Color = switch kind {
-            case .blue: HabitDesign.blueFabric
-            case .soft, .dimmed: HabitDesign.softBlueFabric
+            if kind == .blue {
+                drawPaintedBlueFabric(in: &context, size: size)
+                return
             }
 
+            let base: Color = HabitDesign.softBlueFabric
             context.fill(Path(CGRect(origin: .zero, size: size)), with: .color(base))
 
             for x in stride(from: -size.height, through: size.width + size.height, by: 18) {
@@ -84,6 +107,95 @@ struct FabricBackground: View {
             }
         }
         .ignoresSafeArea()
+    }
+
+    private func drawPaintedBlueFabric(in context: inout GraphicsContext, size: CGSize) {
+        let rect = CGRect(origin: .zero, size: size)
+        let base = Color(red: 0.31, green: 0.56, blue: 0.65)
+        let dark = Color(red: 0.18, green: 0.42, blue: 0.52)
+        let light = Color(red: 0.65, green: 0.83, blue: 0.87)
+
+        context.fill(Path(rect), with: .color(base))
+
+        for x in stride(from: -size.height, through: size.width + size.height, by: 9) {
+            var path = Path()
+            path.move(to: CGPoint(x: x, y: 0))
+            path.addLine(to: CGPoint(x: x + size.height * 0.72, y: size.height))
+            context.stroke(path, with: .color(.white.opacity(0.10)), lineWidth: 1.1)
+        }
+
+        for x in stride(from: 0, through: size.width, by: 5) {
+            var path = Path()
+            path.move(to: CGPoint(x: x, y: 0))
+            path.addLine(to: CGPoint(x: x + sin(x / 15) * 3, y: size.height))
+            context.stroke(path, with: .color(.black.opacity(0.045)), lineWidth: 0.8)
+        }
+
+        for y in stride(from: 0, through: size.height, by: 6) {
+            var path = Path()
+            path.move(to: CGPoint(x: 0, y: y))
+            path.addLine(to: CGPoint(x: size.width, y: y + cos(y / 18) * 3))
+            context.stroke(path, with: .color(.white.opacity(0.07)), lineWidth: 0.8)
+        }
+
+        let patches: [(CGRect, Double, Double)] = [
+            (CGRect(x: -20, y: 0, width: size.width * 0.30, height: size.height * 0.68), -7, 0.22),
+            (CGRect(x: size.width * 0.18, y: -14, width: size.width * 0.18, height: size.height * 0.95), 4, 0.12),
+            (CGRect(x: size.width * 0.38, y: -22, width: size.width * 0.22, height: size.height * 1.10), -3, 0.16),
+            (CGRect(x: size.width * 0.58, y: -10, width: size.width * 0.16, height: size.height * 0.82), 6, 0.10),
+            (CGRect(x: size.width * 0.72, y: 0, width: size.width * 0.22, height: size.height), -4, 0.14),
+            (CGRect(x: size.width * 0.88, y: -8, width: size.width * 0.18, height: size.height * 1.04), 5, 0.18)
+        ]
+
+        for (patchRect, rotation, opacity) in patches {
+            var copy = context
+            copy.translateBy(x: patchRect.midX, y: patchRect.midY)
+            copy.rotate(by: .degrees(rotation))
+            copy.translateBy(x: -patchRect.midX, y: -patchRect.midY)
+            copy.fill(Path(roundedRect: patchRect, cornerRadius: 8), with: .color(light.opacity(opacity)))
+            copy.stroke(Path(roundedRect: patchRect, cornerRadius: 8), with: .color(dark.opacity(0.12)), lineWidth: 2)
+        }
+
+        let foldLines: [(CGPoint, CGPoint, CGFloat, Double)] = [
+            (CGPoint(x: size.width * 0.03, y: 0), CGPoint(x: size.width * 0.18, y: size.height), 5, 0.16),
+            (CGPoint(x: size.width * 0.32, y: 0), CGPoint(x: size.width * 0.35, y: size.height), 7, 0.18),
+            (CGPoint(x: size.width * 0.48, y: 0), CGPoint(x: size.width * 0.51, y: size.height), 8, 0.17),
+            (CGPoint(x: size.width * 0.69, y: 0), CGPoint(x: size.width * 0.73, y: size.height), 4, 0.14),
+            (CGPoint(x: size.width * 0.92, y: 0), CGPoint(x: size.width * 0.96, y: size.height), 5, 0.20)
+        ]
+
+        for (start, end, width, opacity) in foldLines {
+            var shadow = Path()
+            shadow.move(to: start)
+            shadow.addLine(to: end)
+            context.stroke(shadow, with: .color(.black.opacity(opacity)), lineWidth: width)
+
+            var highlight = Path()
+            highlight.move(to: CGPoint(x: start.x + 4, y: start.y))
+            highlight.addLine(to: CGPoint(x: end.x + 4, y: end.y))
+            context.stroke(highlight, with: .color(.white.opacity(0.16)), lineWidth: max(1, width * 0.35))
+        }
+
+        let scratchPoints: [[CGPoint]] = [
+            [CGPoint(x: size.width * 0.80, y: size.height * 0.08), CGPoint(x: size.width * 0.83, y: size.height * 0.17), CGPoint(x: size.width * 0.81, y: size.height * 0.26)],
+            [CGPoint(x: size.width * 0.91, y: size.height * 0.11), CGPoint(x: size.width * 0.94, y: size.height * 0.22), CGPoint(x: size.width * 0.92, y: size.height * 0.35)],
+            [CGPoint(x: size.width * 0.67, y: size.height * 0.42), CGPoint(x: size.width * 0.71, y: size.height * 0.45), CGPoint(x: size.width * 0.73, y: size.height * 0.52)],
+            [CGPoint(x: size.width * 0.08, y: size.height * 0.68), CGPoint(x: size.width * 0.04, y: size.height * 0.82), CGPoint(x: size.width * 0.02, y: size.height * 0.96)]
+        ]
+
+        for points in scratchPoints {
+            guard let first = points.first else { continue }
+            var path = Path()
+            path.move(to: first)
+            for point in points.dropFirst() {
+                path.addLine(to: point)
+            }
+            context.stroke(path, with: .color(.white.opacity(0.24)), lineWidth: 2)
+            context.stroke(path, with: .color(.black.opacity(0.06)), lineWidth: 5)
+        }
+
+        context.fill(Path(CGRect(x: 0, y: size.height * 0.91, width: size.width * 0.18, height: size.height * 0.16)), with: .color(.white.opacity(0.16)))
+        context.stroke(Path(rect), with: .color(.black.opacity(0.05)), lineWidth: 1)
     }
 }
 

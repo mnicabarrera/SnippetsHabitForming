@@ -4,7 +4,7 @@ struct HomeScreen: View {
     @Binding var route: AppRoute
 
     var body: some View {
-        FigmaScaledCanvas(background: .blue) {
+        FigmaScaledCanvas(background: .blue, backgroundImageName: "Background 1", backgroundIgnoresSafeArea: true) {
             IconButton(systemName: "gearshape", action: { route = .reminderPreferences })
                 .position(x: 42, y: 44)
             IconButton(systemName: "plus.circle", action: { route = .quickJournalEntry() })
@@ -24,6 +24,7 @@ struct HomeScreen: View {
                 route = .quickJournalEntry()
             } label: {
                 NotebookView(
+                    imageName: "Journal 1",
                     title: "Vacation\nJournal",
                     location: "Bogota, Colombia",
                     date: "Jan, 2026",
@@ -40,13 +41,14 @@ struct HomeScreen: View {
                 route = .dailyCheckIn
             } label: {
                 NotebookView(
+                    imageName: "Journal 2",
                     title: "Everyday\nSnippets",
                     location: "Sydney, Australia",
                     date: "March, 2026",
                     grid: "A4/PLAIN",
                     color: HabitDesign.creamBook,
-                    width: 164,
-                    height: 228
+                    width: 170,
+                    height: 234
                 )
             }
             .buttonStyle(.plain)
@@ -56,6 +58,7 @@ struct HomeScreen: View {
                 route = .quickJournalEntry()
             } label: {
                 NotebookView(
+                    imageName: "Journal 3",
                     title: "Diary &\nSketches",
                     location: "Sydney, Australia",
                     date: "March, 2026",
@@ -72,6 +75,7 @@ struct HomeScreen: View {
 }
 
 private struct NotebookView: View {
+    let imageName: String
     let title: String
     let location: String
     let date: String
@@ -82,15 +86,12 @@ private struct NotebookView: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 3)
-                .fill(color)
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: width, height: height)
+                .clipped()
                 .shadow(color: .black.opacity(0.25), radius: 4, x: 3, y: 4)
-                .overlay(FabricLines().opacity(0.35))
-
-            Rectangle()
-                .fill(.black.opacity(0.1))
-                .frame(width: 4)
-                .frame(maxWidth: .infinity, alignment: .leading)
 
             Text(title)
                 .figmaText(17, weight: .bold)

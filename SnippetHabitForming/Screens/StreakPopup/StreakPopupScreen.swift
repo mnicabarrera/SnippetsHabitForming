@@ -4,7 +4,7 @@ struct StreakPopupScreen: View {
     @Binding var route: AppRoute
 
     var body: some View {
-        FigmaScaledCanvas(background: .soft) {
+        FigmaScaledCanvas(background: .soft, backgroundImageName: "Background 2", backgroundIgnoresSafeArea: true) {
             IconButton(systemName: "house", action: { route = .home })
                 .position(x: 48, y: 30)
 
@@ -24,32 +24,40 @@ struct StreakPopupScreen: View {
             .frame(width: 32)
             .position(x: 815, y: 116)
 
-            Rectangle()
-                .fill(.black.opacity(0.55))
-                .frame(width: HabitDesign.canvasSize.width, height: HabitDesign.canvasSize.height)
-                .position(x: HabitDesign.canvasSize.width / 2, y: HabitDesign.canvasSize.height / 2)
+        }
+        .overlay {
+            StreakOverlay(route: $route)
+        }
+    }
+}
 
-            PaperCard(width: 226, height: 234, radius: 30) {
-                VStack(spacing: 8) {
-                    Image(systemName: "star")
-                        .font(.system(size: 82, weight: .black))
-                        .foregroundStyle(.black.opacity(0.82))
-                        .shadow(color: .white.opacity(0.9), radius: 1, x: -2, y: -2)
-                    Text("3 Days!")
-                        .figmaText(31, weight: .bold)
-                    Text("Consistency Queen")
-                        .figmaText(13)
-                    Button {
-                        route = .weeklyRecapOverview
-                    } label: {
-                        Text("Overview")
-                            .figmaText(8, weight: .bold)
-                            .padding(.top, 10)
-                    }
-                    .buttonStyle(.plain)
+private struct StreakOverlay: View {
+    @Binding var route: AppRoute
+
+    var body: some View {
+        GeometryReader { proxy in
+            let scale = min(proxy.size.width / HabitDesign.canvasSize.width, proxy.size.height / HabitDesign.canvasSize.height)
+            let popupX = proxy.size.width / 2 + (437 - HabitDesign.canvasSize.width / 2) * scale
+            let popupY = proxy.size.height / 2 + (207 - HabitDesign.canvasSize.height / 2) * scale
+
+            ZStack {
+                Rectangle()
+                    .fill(.black.opacity(0.55))
+                    .ignoresSafeArea()
+
+                Button {
+                    route = .weeklyRecapOverview
+                } label: {
+                    Image("PopUp Streak")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 226 * scale, height: 244 * scale)
                 }
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .position(x: popupX, y: popupY)
+                .accessibilityLabel("Overview")
             }
-            .position(x: 437, y: 207)
         }
     }
 }

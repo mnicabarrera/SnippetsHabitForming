@@ -4,7 +4,7 @@ struct ReminderPreferencesScreen: View {
     @Binding var route: AppRoute
 
     var body: some View {
-        FigmaScaledCanvas(background: .soft) {
+        FigmaScaledCanvas(background: .soft, backgroundImageName: "Background 2", backgroundIgnoresSafeArea: true) {
             IconButton(systemName: "house", action: { route = .home })
                 .position(x: 824, y: 56)
 

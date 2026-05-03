@@ -2,115 +2,94 @@ import SwiftUI
 
 struct WeeklyHabitTrackerScreen: View {
     @Binding var route: AppRoute
+    @State private var habitSymbols: [String?] = [
+        "sun.max.fill",
+        "star.fill",
+        "heart.fill",
+        nil,
+        nil,
+        nil,
+        nil
+    ]
+
+    private let extraHabitSymbols = [
+        "face.smiling",
+        "pawprint.fill",
+        "sparkles",
+        "moon.fill"
+    ]
 
     var body: some View {
-        FigmaScaledCanvas(background: .soft) {
+        FigmaScaledCanvas(background: .soft, backgroundImageName: "Background 2", backgroundIgnoresSafeArea: true) {
+            Image("Weekly HT")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 760, height: 377)
+                .position(x: 447, y: 204)
+                .allowsHitTesting(false)
+
             IconButton(systemName: "arrow.left", action: { route = .back })
                 .position(x: 44, y: 36)
             IconButton(systemName: "house", action: { route = .home })
                 .position(x: 834, y: 36)
 
-            PaperCard(width: 353, height: 286, radius: 28) {
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("March 2026")
-                        .figmaText(10, weight: .bold)
-                        .padding(.top, 25)
-                    Text("Habit Tracker")
-                        .figmaText(17, weight: .bold)
-                        .padding(.top, 4)
-
-                    LazyVGrid(columns: Array(repeating: GridItem(.fixed(64), spacing: 17), count: 4), spacing: 52) {
-                        HabitSquare(symbol: "sun.max.fill")
-                        HabitSquare(symbol: "star.fill")
-                        HabitSquare(symbol: "heart.fill")
-                        HabitSquare(symbol: nil)
-                        HabitSquare(symbol: nil)
-                        HabitSquare(symbol: nil)
-                        HabitSquare(symbol: nil)
+            VStack(alignment: .center, spacing: 0) {
+                Spacer()
+                    .frame(height: 88)
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(64), spacing: 17), count: 4), spacing: 52) {
+                    ForEach(habitSymbols.indices, id: \.self) { index in
+                        HabitSquare(symbol: habitSymbols[index]) {
+                            fillHabitSquare(at: index)
+                        }
                     }
-                    .padding(.top, 27)
                 }
-                .padding(.leading, 25)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .frame(width: 307, alignment: .center)
             }
+            .frame(width: 353, height: 286, alignment: .top)
             .position(x: 244, y: 201)
-
-            ProgressSticker()
-                .position(x: 390, y: 318)
-
-            ZStack {
-                PaperCard(width: 168, height: 118, radius: 2, rotation: 6) {
-                    Text("Weekly goal")
-                        .figmaText(17, weight: .bold)
-                        .position(x: 83, y: 28)
-                    Text("Reconnect with\nmy inner child\nthrough 5 small\nmoments of play.")
-                        .figmaText(10)
-                        .multilineTextAlignment(.leading)
-                        .position(x: 85, y: 74)
-                }
-                .position(x: 0, y: 0)
-                Tape(color: Color(red: 0.82, green: 0.78, blue: 0.62), width: 75, height: 28, rotation: -22)
-                    .position(x: -67, y: -51)
-                Tape(color: Color(red: 0.82, green: 0.78, blue: 0.62), width: 75, height: 28, rotation: 25)
-                    .position(x: -5, y: 75)
-
-                LinedNote()
-                    .position(x: 143, y: 37)
-            }
-            .position(x: 610, y: 147)
-
-            PaperCard(width: 252, height: 65, radius: 2, rotation: -9) {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Playful Insight")
-                        .figmaText(17, weight: .bold)
-                    Text("You seem to be most creative\non Wednesday mornings.")
-                        .figmaText(12)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 18)
-            }
-            .position(x: 658, y: 300)
         }
+    }
+
+    private func fillHabitSquare(at index: Int) {
+        guard habitSymbols[index] == nil else { return }
+
+        let filledExtraCount = max(0, habitSymbols.compactMap { $0 }.count - 3)
+        guard filledExtraCount < extraHabitSymbols.count else { return }
+
+        habitSymbols[index] = extraHabitSymbols[filledExtraCount]
     }
 }
 
 private struct HabitSquare: View {
     let symbol: String?
+    let action: () -> Void
 
     var body: some View {
-        RoundedRectangle(cornerRadius: 12)
-            .fill(Color(red: 0.98, green: 0.96, blue: 0.92))
-            .frame(width: 64, height: 58)
-            .shadow(color: .black.opacity(0.20), radius: 2, x: 2, y: 4)
-            .overlay {
-                if let symbol {
-                    Image(systemName: symbol)
-                        .font(.system(size: 39, weight: .black))
-                        .foregroundStyle(.black)
+        Button(action: action) {
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color(red: 0.98, green: 0.96, blue: 0.92))
+                .frame(width: 64, height: 58)
+                .shadow(color: .black.opacity(0.20), radius: 2, x: 2, y: 4)
+                .overlay(alignment: .center) {
+                    if let symbol {
+                        Image(systemName: symbol)
+                            .font(.system(size: 39, weight: .black))
+                            .foregroundStyle(.black)
+                            .frame(width: 64, height: 58, alignment: .center)
+                    }
                 }
-            }
+        }
+        .buttonStyle(.plain)
+        .contentShape(RoundedRectangle(cornerRadius: 12))
     }
 }
 
 private struct ProgressSticker: View {
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(Color(red: 0.88, green: 0.98, blue: 0.89))
-                .overlay(GridTexture().opacity(0.8))
-                .frame(width: 118, height: 86)
-                .rotationEffect(.degrees(8))
-                .shadow(color: .black.opacity(0.16), radius: 2, x: 2, y: 2)
-            Text("Progress")
-                .figmaText(16, weight: .bold)
-                .rotationEffect(.degrees(8))
-                .position(x: 61, y: 27)
-            Text("40%")
-                .figmaText(48)
-                .rotationEffect(.degrees(8))
-                .position(x: 61, y: 58)
-        }
-        .frame(width: 136, height: 96)
+        Image("Progress")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 136, height: 96)
     }
 }
 

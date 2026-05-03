@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Playful.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

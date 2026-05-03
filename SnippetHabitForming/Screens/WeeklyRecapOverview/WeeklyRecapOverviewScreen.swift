@@ -4,26 +4,17 @@ struct WeeklyRecapOverviewScreen: View {
     @Binding var route: AppRoute
 
     var body: some View {
-        FigmaScaledCanvas(background: .soft) {
+        FigmaScaledCanvas(background: .soft, backgroundImageName: "Background 2", backgroundIgnoresSafeArea: true) {
             IconButton(systemName: "arrow.left", action: { route = .back })
                 .position(x: 44, y: 36)
             IconButton(systemName: "house", action: { route = .home })
                 .position(x: 830, y: 36)
 
-            ZStack {
-                PaperCard(width: 335, height: 275, radius: 12) {
-                    Text("Your Playful Recap")
-                        .figmaText(17, weight: .bold)
-                        .position(x: 156, y: 37)
-                    PhotoCollage()
-                        .position(x: 178, y: 158)
-                }
-                Tape(width: 62, height: 28, rotation: -31)
-                    .position(x: 20, y: 15)
-                Tape(color: Color(red: 0.98, green: 0.69, blue: 0.45), width: 116, height: 42, rotation: -25)
-                    .position(x: 281, y: 258)
-            }
-            .position(x: 258, y: 216)
+            Image("Playful recap")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 385, height: 302)
+                .position(x: 260, y: 222)
 
             VStack(spacing: 13) {
                 MetricPill(title: "Top Mood", value: "Wild & Playful")
@@ -66,7 +57,7 @@ private struct MetricPill: View {
         .frame(width: 345, height: 40)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(HabitDesign.paper)
+                .fill(Color(red: 0.996, green: 0.976, blue: 0.945))
                 .shadow(color: .black.opacity(0.18), radius: 3, x: 2, y: 4)
         )
     }

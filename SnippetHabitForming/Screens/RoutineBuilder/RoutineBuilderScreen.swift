@@ -31,7 +31,7 @@ struct RoutineBuilderScreen: View {
     }
 
     var body: some View {
-        FigmaScaledCanvas(background: .soft) {
+        FigmaScaledCanvas(background: .soft, backgroundImageName: "Background 2", backgroundIgnoresSafeArea: true) {
             IconButton(systemName: "arrow.left", action: { route = .back })
                 .position(x: 40, y: 52)
             IconButton(systemName: "checkmark", action: { showsConfirmation = true })
@@ -73,6 +73,8 @@ struct RoutineBuilderScreen: View {
             )
             .position(x: 437, y: 248)
 
+        }
+        .overlay {
             if showsConfirmation {
                 ConfirmationOverlay(route: $route)
             }
@@ -130,7 +132,7 @@ private struct DayColumn: View {
             .background {
                 if highlighted {
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(.black, lineWidth: 4)
+                        .stroke(.black, lineWidth: 2)
                 }
             }
         }
@@ -166,41 +168,27 @@ private struct ConfirmationOverlay: View {
     @Binding var route: AppRoute
 
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(.black.opacity(0.55))
-                .frame(width: HabitDesign.canvasSize.width, height: HabitDesign.canvasSize.height)
-                .position(x: HabitDesign.canvasSize.width / 2, y: HabitDesign.canvasSize.height / 2)
+        GeometryReader { proxy in
+            let scale = min(proxy.size.width / HabitDesign.canvasSize.width, proxy.size.height / HabitDesign.canvasSize.height)
 
-            PaperCard(width: 226, height: 234, radius: 30) {
-                VStack(spacing: 0) {
-                    Image(systemName: "star")
-                        .font(.system(size: 86, weight: .black))
-                        .foregroundStyle(.black.opacity(0.82))
-                        .shadow(color: .white.opacity(0.95), radius: 1, x: -2, y: -2)
-                        .padding(.top, 24)
+            ZStack {
+                Rectangle()
+                    .fill(.black.opacity(0.55))
+                    .ignoresSafeArea()
 
-                    VStack(spacing: 0) {
-                        Text("You’re all set")
-                            .figmaText(23)
-                        Text("Let’s play!")
-                            .figmaText(34, weight: .bold)
-                    }
-                    .padding(.top, 14)
-
-                    Button {
-                        route = .home
-                    } label: {
-                        Text("Choose a Journal")
-                            .figmaText(10, weight: .bold)
-                            .underline()
-                            .padding(.top, 28)
-                    }
-                    .buttonStyle(.plain)
+                Button {
+                    route = .home
+                } label: {
+                    Image("PopUp")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 226 * scale, height: 244 * scale)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
+                .accessibilityLabel("Choose a Journal")
             }
-            .position(x: 437, y: 248)
         }
     }
 }
