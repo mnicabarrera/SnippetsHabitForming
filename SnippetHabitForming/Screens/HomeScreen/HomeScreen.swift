@@ -47,8 +47,8 @@ struct HomeScreen: View {
                     date: "March, 2026",
                     grid: "A4/PLAIN",
                     color: HabitDesign.creamBook,
-                    width: 170,
-                    height: 234
+                    width: 184,
+                    height: 246
                 )
             }
             .buttonStyle(.plain)
