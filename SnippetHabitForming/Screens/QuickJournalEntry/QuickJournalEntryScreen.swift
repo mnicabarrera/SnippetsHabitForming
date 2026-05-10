@@ -101,13 +101,23 @@ struct JournalBook: View {
             .opacity(openProgress)
 
             HStack(spacing: 0) {
-                PageView(side: .left, showsPhotos: showsPhotos)
-                PageView(side: .right, showsPhotos: showsPhotos)
+                PageView(side: .left)
+                PageView(side: .right)
             }
             .clipShape(RoundedRectangle(cornerRadius: 14))
             .frame(width: 430, height: 320)
             .scaleEffect(x: max(0.05, openProgress), anchor: .center)
             .opacity(Double(openProgress))
+
+            if showsPhotos {
+                Image("Polaroids")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 385, height: 294)
+                    .scaleEffect(x: max(0.05, openProgress), anchor: .center)
+                    .opacity(Double(openProgress))
+                    .allowsHitTesting(false)
+            }
 
             LinearGradient(
                 colors: [.clear, .black.opacity(0.17), .clear],
@@ -149,7 +159,6 @@ private enum PageSide {
 
 private struct PageView: View {
     let side: PageSide
-    let showsPhotos: Bool
 
     var body: some View {
         ZStack {
@@ -158,25 +167,6 @@ private struct PageView: View {
                 .overlay(PaperTexture().opacity(0.16))
                 .overlay(DotGrid().opacity(0.18))
                 .shadow(color: pageShadowColor, radius: 8, x: pageShadowX, y: 0)
-
-            if showsPhotos {
-                if side == .left {
-                    PhotoTile(kind: .lanterns)
-                        .frame(width: 141, height: 118)
-                        .position(x: 108, y: 78)
-                    PhotoTile(kind: .dog)
-                        .frame(width: 128, height: 151)
-                        .rotationEffect(.degrees(1))
-                        .position(x: 128, y: 229)
-                } else {
-                    PhotoTile(kind: .stage)
-                        .frame(width: 117, height: 137)
-                        .position(x: 123, y: 86)
-                    PhotoTile(kind: .sky)
-                        .frame(width: 151, height: 122)
-                        .position(x: 95, y: 229)
-                }
-            }
         }
         .frame(width: 215, height: 320)
     }
@@ -225,185 +215,6 @@ private struct CoverFabricLines: View {
                 context.stroke(path, with: .color(.black.opacity(0.05)), lineWidth: 0.5)
             }
         }
-    }
-}
-
-struct PhotoTile: View {
-    enum Kind {
-        case lanterns
-        case stage
-        case dog
-        case sky
-        case custom([Color], String)
-    }
-
-    let kind: Kind
-
-    init(kind: Kind) {
-        self.kind = kind
-    }
-
-    init(colors: [Color], label: String = "") {
-        self.kind = .custom(colors, label)
-    }
-
-    var body: some View {
-        GeometryReader { proxy in
-            let size = proxy.size
-
-            ZStack {
-                Rectangle().fill(Color(red: 0.08, green: 0.015, blue: 0.01))
-
-                PhotoImage(kind: kind)
-                    .padding(12)
-
-                FilmMarks()
-                    .padding(4)
-            }
-            .shadow(color: .black.opacity(0.25), radius: 2, x: 2, y: 2)
-            .overlay(alignment: .bottomLeading) {
-                Text("KODAK PORTRA 400")
-                    .font(.system(size: max(3.5, size.width * 0.035), weight: .bold, design: .monospaced))
-                    .foregroundStyle(Color(red: 0.98, green: 0.75, blue: 0.52).opacity(0.75))
-                    .rotationEffect(.degrees(-90))
-                    .offset(x: 5, y: -14)
-            }
-        }
-    }
-}
-
-private struct PhotoImage: View {
-    let kind: PhotoTile.Kind
-
-    var body: some View {
-        Canvas { context, size in
-            let rect = CGRect(origin: .zero, size: size)
-
-            switch kind {
-            case .lanterns:
-                context.fill(Path(rect), with: .linearGradient(
-                    Gradient(colors: [
-                        Color(red: 0.04, green: 0.08, blue: 0.10),
-                        Color(red: 0.95, green: 0.16, blue: 0.08),
-                        Color(red: 0.02, green: 0.02, blue: 0.03)
-                    ]),
-                    startPoint: CGPoint(x: 0, y: 0),
-                    endPoint: CGPoint(x: size.width, y: size.height)
-                ))
-                for index in 0..<22 {
-                    let row = CGFloat(index % 4)
-                    let column = CGFloat(index / 4)
-                    let x = 13 + column * 19 + row * 7
-                    let y = 11 + row * 17 + column * 4
-                    let lantern = CGRect(x: x, y: y, width: 15, height: 17)
-                    context.fill(Path(ellipseIn: lantern), with: .color(Color(red: 1, green: 0.29, blue: 0.12)))
-                    context.stroke(Path(ellipseIn: lantern), with: .color(.yellow.opacity(0.32)), lineWidth: 1)
-                }
-                for index in 0..<5 {
-                    var path = Path()
-                    path.move(to: CGPoint(x: 0, y: 20 + CGFloat(index) * 13))
-                    path.addLine(to: CGPoint(x: size.width, y: 8 + CGFloat(index) * 17))
-                    context.stroke(path, with: .color(.white.opacity(0.28)), lineWidth: 1)
-                }
-
-            case .stage:
-                context.fill(Path(rect), with: .linearGradient(
-                    Gradient(colors: [
-                        Color(red: 0.95, green: 0.06, blue: 0.03),
-                        Color(red: 0.40, green: 0.02, blue: 0.02),
-                        .black
-                    ]),
-                    startPoint: CGPoint(x: 0, y: 0),
-                    endPoint: CGPoint(x: size.width, y: size.height)
-                ))
-                var beam = Path()
-                beam.move(to: CGPoint(x: 18, y: 0))
-                beam.addLine(to: CGPoint(x: 64, y: size.height))
-                beam.addLine(to: CGPoint(x: 15, y: size.height))
-                beam.closeSubpath()
-                context.fill(beam, with: .color(.white.opacity(0.22)))
-                context.fill(Path(ellipseIn: CGRect(x: size.width * 0.50, y: size.height * 0.48, width: 28, height: 24)), with: .color(.black.opacity(0.8)))
-                context.fill(Path(CGRect(x: size.width * 0.59, y: size.height * 0.60, width: 11, height: 35)), with: .color(.black.opacity(0.9)))
-                context.stroke(Path { path in
-                    path.move(to: CGPoint(x: size.width * 0.47, y: size.height * 0.70))
-                    path.addLine(to: CGPoint(x: size.width * 0.72, y: size.height * 0.70))
-                }, with: .color(.white.opacity(0.45)), lineWidth: 2)
-
-            case .dog:
-                context.fill(Path(rect), with: .color(Color(red: 0.70, green: 0.10, blue: 0.18)))
-                for x in stride(from: 8.0, through: Double(size.width), by: 18) {
-                    for y in stride(from: 8.0, through: Double(size.height), by: 20) {
-                        let mark = CGRect(x: x, y: y, width: 8, height: 5)
-                        context.stroke(Path(ellipseIn: mark), with: .color(.cyan.opacity(0.35)), lineWidth: 1)
-                    }
-                }
-                context.fill(Path(ellipseIn: CGRect(x: size.width * 0.08, y: size.height * 0.34, width: size.width * 0.62, height: size.height * 0.44)), with: .color(Color(red: 0.93, green: 0.90, blue: 0.82)))
-                context.fill(Path(ellipseIn: CGRect(x: size.width * 0.43, y: size.height * 0.18, width: size.width * 0.30, height: size.height * 0.27)), with: .color(Color(red: 0.90, green: 0.86, blue: 0.75)))
-                context.fill(Path(ellipseIn: CGRect(x: size.width * 0.51, y: size.height * 0.22, width: size.width * 0.10, height: size.height * 0.08)), with: .color(.black.opacity(0.70)))
-                context.fill(Path(ellipseIn: CGRect(x: size.width * 0.60, y: size.height * 0.32, width: size.width * 0.09, height: size.height * 0.06)), with: .color(.black.opacity(0.75)))
-
-            case .sky:
-                context.fill(Path(rect), with: .linearGradient(
-                    Gradient(colors: [
-                        Color(red: 0.18, green: 0.04, blue: 0.22),
-                        Color(red: 0.93, green: 0.25, blue: 0.11),
-                        Color(red: 1.0, green: 0.66, blue: 0.22)
-                    ]),
-                    startPoint: CGPoint(x: 0, y: 0),
-                    endPoint: CGPoint(x: 0, y: size.height)
-                ))
-                for index in 0..<10 {
-                    var cloud = Path()
-                    let y = CGFloat(index) * size.height / 10 + 8
-                    cloud.move(to: CGPoint(x: 0, y: y))
-                    for x in stride(from: 0, through: size.width, by: 10) {
-                        cloud.addLine(to: CGPoint(x: x, y: y + sin((x + CGFloat(index) * 11) / 10) * 4))
-                    }
-                    context.stroke(cloud, with: .color(Color(red: 0.15, green: 0.05, blue: 0.20).opacity(0.75)), lineWidth: 5)
-                }
-                context.fill(Path(CGRect(x: 0, y: size.height * 0.82, width: size.width, height: size.height * 0.18)), with: .color(.black.opacity(0.25)))
-
-            case .custom(let colors, let label):
-                context.fill(Path(rect), with: .linearGradient(
-                    Gradient(colors: colors),
-                    startPoint: CGPoint(x: 0, y: 0),
-                    endPoint: CGPoint(x: size.width, y: size.height)
-                ))
-                if !label.isEmpty {
-                    context.draw(
-                        Text(label)
-                            .font(.system(size: 8, weight: .bold, design: .monospaced))
-                            .foregroundStyle(.white.opacity(0.75)),
-                        at: CGPoint(x: 25, y: 14)
-                    )
-                }
-            }
-        }
-        .clipped()
-    }
-}
-
-private struct FilmMarks: View {
-    var body: some View {
-        GeometryReader { proxy in
-            let width = proxy.size.width
-            let height = proxy.size.height
-
-            ZStack {
-                ForEach(0..<4, id: \.self) { index in
-                    Circle()
-                        .fill(Color(red: 0.98, green: 0.75, blue: 0.52).opacity(0.75))
-                        .frame(width: 2, height: 2)
-                        .position(x: 11 + CGFloat(index) * (width - 22) / 3, y: 6)
-
-                    Circle()
-                        .fill(Color(red: 0.98, green: 0.75, blue: 0.52).opacity(0.75))
-                        .frame(width: 2, height: 2)
-                        .position(x: 11 + CGFloat(index) * (width - 22) / 3, y: height - 6)
-                }
-            }
-        }
-        .allowsHitTesting(false)
     }
 }
 

@@ -1,0 +1,159 @@
+{
+  "" : {
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitForming-primary.dia",
+    "emit-module-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitForming-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitForming-primary-emit-module.dia",
+    "pch" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitForming-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitForming-primary.swiftdeps"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/ContentView.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ContentView.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ContentView.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ContentView.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ContentView.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ContentView.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ContentView~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/OrientationLockAppDelegate.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/OrientationLockAppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/OrientationLockAppDelegate.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/OrientationLockAppDelegate.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/OrientationLockAppDelegate.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/OrientationLockAppDelegate.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/OrientationLockAppDelegate.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/OrientationLockAppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/OrientationLockAppDelegate~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/ChallengeSelection/ChallengeSelectionScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ChallengeSelectionScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ChallengeSelectionScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ChallengeSelectionScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ChallengeSelectionScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ChallengeSelectionScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ChallengeSelectionScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ChallengeSelectionScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ChallengeSelectionScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/DailyCheckIn/DailyCheckInScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DailyCheckInScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DailyCheckInScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DailyCheckInScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DailyCheckInScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DailyCheckInScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DailyCheckInScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DailyCheckInScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DailyCheckInScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/HomeScreen/HomeScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/HomeScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/HomeScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/HomeScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/HomeScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/HomeScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/HomeScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/HomeScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/HomeScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/QuickJournalEntry/QuickJournalEntryScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/QuickJournalEntryScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/QuickJournalEntryScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/QuickJournalEntryScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/QuickJournalEntryScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/QuickJournalEntryScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/QuickJournalEntryScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/QuickJournalEntryScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/QuickJournalEntryScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/ReminderPreferences/ReminderPreferencesScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ReminderPreferencesScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ReminderPreferencesScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ReminderPreferencesScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ReminderPreferencesScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ReminderPreferencesScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ReminderPreferencesScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ReminderPreferencesScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/ReminderPreferencesScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/RoutineBuilder/RoutineBuilderScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/RoutineBuilderScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/RoutineBuilderScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/RoutineBuilderScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/RoutineBuilderScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/RoutineBuilderScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/RoutineBuilderScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/RoutineBuilderScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/RoutineBuilderScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/StreakPopup/StreakPopupScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/StreakPopupScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/StreakPopupScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/StreakPopupScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/StreakPopupScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/StreakPopupScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/StreakPopupScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/StreakPopupScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/StreakPopupScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/WeeklyHabitTracker/WeeklyHabitTrackerScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyHabitTrackerScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyHabitTrackerScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyHabitTrackerScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyHabitTrackerScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyHabitTrackerScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyHabitTrackerScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyHabitTrackerScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyHabitTrackerScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/WeeklyRecapOverview/WeeklyRecapOverviewScreen.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyRecapOverviewScreen.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyRecapOverviewScreen.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyRecapOverviewScreen.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyRecapOverviewScreen.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyRecapOverviewScreen.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyRecapOverviewScreen.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyRecapOverviewScreen.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/WeeklyRecapOverviewScreen~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Shared/AppRoute.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/AppRoute.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/AppRoute.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/AppRoute.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/AppRoute.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/AppRoute.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/AppRoute.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/AppRoute.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/AppRoute~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Shared/DesignSystem.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DesignSystem.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DesignSystem.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DesignSystem.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DesignSystem.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DesignSystem.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DesignSystem.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DesignSystem.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/DesignSystem~partial.swiftmodule"
+  },
+  "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/SnippetHabitFormingApp.swift" : {
+    "const-values" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitFormingApp.swiftconstvalues",
+    "dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitFormingApp.d",
+    "diagnostics" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitFormingApp.dia",
+    "index-unit-output-path" : "/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitFormingApp.o",
+    "llvm-bc" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitFormingApp.bc",
+    "object" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitFormingApp.o",
+    "swift-dependencies" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitFormingApp.swiftdeps",
+    "swiftmodule" : "/Users/monicabarrera/Desktop/SnippetHabitForming/DerivedData/Build/Intermediates.noindex/SnippetHabitForming.build/Debug-iphonesimulator/SnippetHabitForming.build/Objects-normal/x86_64/SnippetHabitFormingApp~partial.swiftmodule"
+  }
+}

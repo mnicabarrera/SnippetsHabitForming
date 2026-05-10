@@ -1,0 +1,24 @@
+{
+  "source": "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/RoutineBuilder/RoutineBuilderScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Daily Goal",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Choose a Journal",
+        "location": {
+          "startingColumn": 37,
+          "startingLine": 190
+        }
+      }
+    ]
+  },
+  "version": 1
+}

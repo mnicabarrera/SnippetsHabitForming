@@ -1,0 +1,16 @@
+{
+  "source": "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/HomeScreen/HomeScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Snippets",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 13
+        }
+      }
+    ]
+  },
+  "version": 1
+}

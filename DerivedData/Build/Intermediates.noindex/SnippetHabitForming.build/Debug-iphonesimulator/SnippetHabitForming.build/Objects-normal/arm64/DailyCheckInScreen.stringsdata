@@ -1,0 +1,16 @@
+{
+  "source": "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/DailyCheckIn/DailyCheckInScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "How are you feeling today?",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 11
+        }
+      }
+    ]
+  },
+  "version": 1
+}

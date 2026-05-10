@@ -1,0 +1,16 @@
+{
+  "source": "/Users/monicabarrera/Desktop/SnippetHabitForming/SnippetHabitForming/Screens/WeeklyRecapOverview/WeeklyRecapOverviewScreen.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Habit tracker",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 30
+        }
+      }
+    ]
+  },
+  "version": 1
+}
